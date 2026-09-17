@@ -8,17 +8,11 @@ import dreamsRouter from './routes/dreams.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-
 const app = express();
 
-/*
-Challenge:
-  1. Push this code to GitHub.
-  hint.md for git command help.
-*/ 
-
-if (process.env.NODE_ENV === 'production'){
-  app.use(helmet());
+// Add securiy headers
+if (process.env.NODE_ENV === 'production') {
+  app.use(helmet()); 
 }
 
 const PORT = process.env.PORT || 3001;
